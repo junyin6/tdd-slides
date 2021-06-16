@@ -24,6 +24,6 @@ describe('CarouselButton', () => {
     wrapper.setProps({ onClick, className, dataAction });
     expect(wrapper.prop('onClick')).toBe(onClick);
     expect(wrapper.prop('className')).toBe(className);
-    expect(wrapper.prop('dataAction')).toBe(className);
+    expect(wrapper.prop('dataAction')).toBe(dataAction);
   });
 });
