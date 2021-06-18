@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-const CarouselSlide = ({ imgURL, description, attribution, ...rest }) => {
+const CarouselSlide = ({ imgUrl, description, attribution, ...rest }) => {
   return (
     <figure {...rest}>
-      <img src={imgURL} />
+      <img src={imgUrl} />
       <figcaption>
         <strong>{description}</strong> {attribution}
       </figcaption>
@@ -12,7 +12,7 @@ const CarouselSlide = ({ imgURL, description, attribution, ...rest }) => {
 };
 
 CarouselSlide.propTypes = {
-  imgURL: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
   description: PropTypes.node.isRequired,
   attribution: PropTypes.node,
 };

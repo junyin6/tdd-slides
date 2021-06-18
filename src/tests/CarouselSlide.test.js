@@ -7,7 +7,7 @@ describe('CarouselSlide', () => {
   beforeEach(() => {
     wrapper = shallow(
       <CarouselSlide
-        imgURL="https://example.com/default.jpg"
+        imgUrl="https://example.com/default.jpg"
         description="Default test image"
       />
     );
@@ -23,10 +23,10 @@ describe('CarouselSlide', () => {
   });
 
   it('passes "imgURL" to <img>', () => {
-    const imgURL = 'https://example.com/image.png';
-    wrapper.setProps({ imgURL });
+    const imgUrl = 'https://example.com/image.png';
+    wrapper.setProps({ imgUrl });
     const img = wrapper.find('img');
-    expect(img.prop('src')).toBe(imgURL);
+    expect(img.prop('src')).toBe(imgUrl);
   });
 
   it('passes "description" to <strong> in <figcaption>', () => {
