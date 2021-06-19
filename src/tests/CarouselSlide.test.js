@@ -30,6 +30,14 @@ describe('CarouselSlide', () => {
     expect(img.prop('src')).toBe(imgUrl);
   });
 
+  it('renders correctly', () => {
+    wrapper.setProps({
+      description: 'description',
+      attribution: 'attribution',
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('passes "description" to <strong> in <figcaption>', () => {
     const description = 'what did I tell you';
     const attribution = 'Jun Yin';
@@ -65,6 +73,9 @@ describe('Img', () => {
     expect(mounted.containsMatchingElement(<img src={imgUrl} />)).toBe(true);
   });
 
+  it('renders correctly', () => {
+    expect(mounted.find('img')).toMatchSnapshot();
+  });
   it('has the expected styles', () => {
     expect(mounted).toHaveStyleRule('width', '100%');
     expect(mounted).toHaveStyleRule('object-fit', 'cover');
