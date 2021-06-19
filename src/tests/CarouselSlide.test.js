@@ -22,7 +22,7 @@ describe('CarouselSlide', () => {
     expect(wrapper.childAt(1).type()).toBe('figcaption');
   });
 
-  it('passes "imgURL" to <img>', () => {
+  it('passes "imgUrl" to <img>', () => {
     const imgUrl = 'https://example.com/image.png';
     wrapper.setProps({ imgUrl });
     const img = wrapper.find('img');
