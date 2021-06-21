@@ -21,7 +21,7 @@ exports[`BackButton renders correctly 1`] = `
 </button>
 `;
 
-exports[`Carousel renders correctly 1`] = `
+exports[`Carousel core Component renders correctly 1`] = `
 <Carousel__CarouselWrapper
   defaultBackButton={
     Object {

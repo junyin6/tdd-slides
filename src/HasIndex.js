@@ -5,7 +5,7 @@ const HasIndex = (Component, indexPropName) =>
   class ComponentWithIndex extends React.PureComponent {
     static displayName = `HasIndex(${Component.displayName || Component.name})`;
     static propTypes = {
-      Component: PropTypes.elementType.isRequired,
+      Component: PropTypes.elementType,
       indexPropName: PropTypes.string,
     };
 

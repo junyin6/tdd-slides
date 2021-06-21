@@ -3,6 +3,7 @@ import CarouselButton from './CarouselButton';
 import CarouselSlide from './CarouselSlide';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import HasIndex from './HasIndex';
 
 const CarouselWrapper = styled.div`
   position: relative;
@@ -37,59 +38,63 @@ const ForwardButton = styled(CarouselButton)`
   color: #f8f9fa;
 `;
 
-class Carousel extends React.PureComponent {
-  static propTypes = {
-    slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes))
-      .isRequired,
-    defaultImgHeight: CarouselSlide.propTypes.imgHeight,
-    defaultImg: CarouselSlide.propTypes.Img,
-    defaultCarouselWrapper: PropTypes.elementType,
-    defaultForwardButton: PropTypes.elementType,
-    defaultBackButton: PropTypes.elementType,
+export const Carousel = (props) => {
+  const handlePrevClick = () => {
+    const { slides, slideIndexDecrement } = props;
+    slideIndexDecrement(slides.length);
   };
 
-  static defaultProps = {
-    defaultImgHeight: CarouselSlide.defaultProps.imgHeight,
-    defaultImg: CarouselSlide.defaultProps.Img,
-    defaultCarouselWrapper: CarouselWrapper,
-    defaultForwardButton: ForwardButton,
-    defaultBackButton: BackButton,
+  const handleNextClick = () => {
+    const { slides, slideIndexIncrement } = props;
+    slideIndexIncrement(slides.length);
   };
 
-  state = {
-    slideIndex: 0,
-  };
+  const {
+    slides,
+    slideIndex,
+    defaultImgHeight,
+    defaultImg,
+    slideIndexIncrement: _slideIndexIncrement,
+    slideIndexDecrement: _slideIndexDecrement,
+    ...rest
+  } = props;
 
-  handlePrevClick = () => {
-    const { slides } = this.props;
-    this.setState(({ slideIndex }) => ({
-      slideIndex: (slides.length + slideIndex - 1) % this.props.slides.length,
-    }));
-  };
-  handleNextClick = () => {
-    this.setState(({ slideIndex }) => ({
-      slideIndex: (slideIndex + 1) % this.props.slides.length,
-    }));
-  };
+  return (
+    <CarouselWrapper {...rest}>
+      <CarouselSlide
+        Img={defaultImg}
+        imgHeight={defaultImgHeight}
+        {...slides[slideIndex]}
+      />
+      <BackButton data-action="Prev" onClick={handlePrevClick}>
+        &lt;
+      </BackButton>
+      <ForwardButton data-action="Next" onClick={handleNextClick}>
+        &gt;
+      </ForwardButton>
+    </CarouselWrapper>
+  );
+};
 
-  render() {
-    const { slides, defaultImgHeight, defaultImg, ...rest } = this.props;
-    return (
-      <CarouselWrapper {...rest}>
-        <CarouselSlide
-          Img={defaultImg}
-          imgHeight={defaultImgHeight}
-          {...slides[this.state.slideIndex]}
-        />
-        <BackButton data-action="Prev" onClick={this.handlePrevClick}>
-          &lt;
-        </BackButton>
-        <ForwardButton data-action="Next" onClick={this.handleNextClick}>
-          &gt;
-        </ForwardButton>
-      </CarouselWrapper>
-    );
-  }
-}
+Carousel.propTypes = {
+  slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes))
+    .isRequired,
+  slideIndex: PropTypes.number.isRequired,
+  slideIndexIncrement: PropTypes.func.isRequired,
+  slideIndexDecrement: PropTypes.func.isRequired,
+  defaultImgHeight: CarouselSlide.propTypes.imgHeight,
+  defaultImg: CarouselSlide.propTypes.Img,
+  defaultCarouselWrapper: PropTypes.elementType,
+  defaultForwardButton: PropTypes.elementType,
+  defaultBackButton: PropTypes.elementType,
+};
 
-export default Carousel;
+Carousel.defaultProps = {
+  defaultImgHeight: CarouselSlide.defaultProps.imgHeight,
+  defaultImg: CarouselSlide.defaultProps.Img,
+  defaultCarouselWrapper: CarouselWrapper,
+  defaultForwardButton: ForwardButton,
+  defaultBackButton: BackButton,
+};
+
+export default HasIndex(Carousel, 'slideIndex');
