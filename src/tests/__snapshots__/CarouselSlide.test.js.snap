@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CarouselSlide renders correctly 1`] = `
-<figure>
+<CarouselSlide__Figure>
   <CarouselSlide__Img
     imgHeight={600}
     src="https://example.com/default.jpg"
@@ -13,7 +13,7 @@ exports[`CarouselSlide renders correctly 1`] = `
      
     attribution
   </figcaption>
-</figure>
+</CarouselSlide__Figure>
 `;
 
 exports[`Img renders correctly 1`] = `

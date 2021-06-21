@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  margin: 0.5rem;
+  padding: 1rem;
+  height: 600px;
+  left: 0;
+  top: 0;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  font-size: 2rem;
+  color: #f8f9fa;
+}
+
+<button
+  className="c0"
+>
+  buttonText
+</button>
+`;
+
+exports[`Carousel renders correctly 1`] = `
+<Carousel__CarouselWrapper
+  defaultBackButton={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Carousel__BackButton-f9wgym-1",
+        "isStatic": true,
+        "rules": Array [
+          "position:absolute;margin:0.5rem;padding:1rem;height:600px;left:0;top:0;border:none;background:rgba(0,0,0,0.3);font-size:2rem;color:#f8f9fa;",
+        ],
+      },
+      "displayName": "Carousel__BackButton",
+      "render": [Function],
+      "styledComponentId": "Carousel__BackButton-f9wgym-1",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    }
+  }
+  defaultCarouselWrapper={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Carousel__CarouselWrapper-f9wgym-0",
+        "isStatic": true,
+        "rules": Array [
+          "position:relative;background-color:black;color:#f8f9fa;",
+        ],
+      },
+      "displayName": "Carousel__CarouselWrapper",
+      "render": [Function],
+      "styledComponentId": "Carousel__CarouselWrapper-f9wgym-0",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  defaultForwardButton={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Carousel__ForwardButton-f9wgym-2",
+        "isStatic": true,
+        "rules": Array [
+          "position:absolute;margin:0.5rem;padding:1rem;height:600px;right:0;top:0;border:none;background:rgba(0,0,0,0.3);font-size:2rem;color:#f8f9fa;",
+        ],
+      },
+      "displayName": "Carousel__ForwardButton",
+      "render": [Function],
+      "styledComponentId": "Carousel__ForwardButton-f9wgym-2",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    }
+  }
+>
+  <CarouselSlide
+    Img={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "CarouselSlide__Img-ds4ujd-1",
+          "isStatic": false,
+          "rules": Array [
+            "object-fit:cover;width:100%;height:",
+            [Function],
+            ";",
+          ],
+        },
+        "displayName": "CarouselSlide__Img",
+        "render": [Function],
+        "styledComponentId": "CarouselSlide__Img-ds4ujd-1",
+        "target": "img",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    attribution="Uno Pizzeria"
+    description="Slide 1"
+    imgHeight={600}
+    imgUrl="https://example.com/slide1.png"
+  />
+  <Carousel__BackButton
+    data-action="Prev"
+    onClick={[Function]}
+  >
+    &lt;
+  </Carousel__BackButton>
+  <Carousel__ForwardButton
+    data-action="Next"
+    onClick={[Function]}
+  >
+    &gt;
+  </Carousel__ForwardButton>
+</Carousel__CarouselWrapper>
+`;
+
+exports[`CarouselWrapper renders correctly 1`] = `
+.c0 {
+  position: relative;
+  background-color: black;
+  color: #f8f9fa;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`ForwardButton renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  margin: 0.5rem;
+  padding: 1rem;
+  height: 600px;
+  right: 0;
+  top: 0;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  font-size: 2rem;
+  color: #f8f9fa;
+}
+
+<button
+  className="c0"
+>
+  buttonText
+</button>
+`;

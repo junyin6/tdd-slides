@@ -13,7 +13,8 @@ describe('CarouselSlide', () => {
       />
     );
   });
-
+  /*
+//Snapshot does all of this 
   it('renders a <figure>', () => {
     expect(wrapper.type()).toBe('figure');
   });
@@ -29,15 +30,6 @@ describe('CarouselSlide', () => {
     const img = wrapper.find(CarouselSlide.defaultProps.Img);
     expect(img.prop('src')).toBe(imgUrl);
   });
-
-  it('renders correctly', () => {
-    wrapper.setProps({
-      description: 'description',
-      attribution: 'attribution',
-    });
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('passes "description" to <strong> in <figcaption>', () => {
     const description = 'what did I tell you';
     const attribution = 'Jun Yin';
@@ -47,8 +39,16 @@ describe('CarouselSlide', () => {
       `${description} ${attribution}`
     );
   });
+  */
+  it('renders correctly', () => {
+    wrapper.setProps({
+      description: 'description',
+      attribution: 'attribution',
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 
-  it('passes other props as children to <figure>', () => {
+  it('passes other props to <figure>', () => {
     const onClick = () => {};
     const style = {};
     const className = 'carousel-slide';
@@ -69,25 +69,31 @@ describe('Img', () => {
     mounted = mount(<Img src={imgUrl} imgHeight={500} />);
   });
 
+  //these two are the only required ones 1) SnapShot 2) Dynamic CSS that depends on props
+  it('renders correctly', () => {
+    expect(mounted.find('img')).toMatchSnapshot();
+  });
+
+  it('uses the imgHeight as Height style property', () => {
+    expect(mounted).toHaveStyleRule('height', '500px');
+    mounted.setProps({ imgHeight: 'calc(100vh - 100px)' });
+    expect(mounted).toHaveStyleRule('height', 'calc(100vh - 100px)');
+  });
+  /*
+//SnapShot 'renders correctly' does all of this 
   it('renders an <img> with the given src', () => {
     expect(mounted.containsMatchingElement(<img src={imgUrl} />)).toBe(true);
   });
 
-  it('renders correctly', () => {
-    expect(mounted.find('img')).toMatchSnapshot();
-  });
+
   it('has the expected styles', () => {
     expect(mounted).toHaveStyleRule('width', '100%');
     expect(mounted).toHaveStyleRule('object-fit', 'cover');
     expect(mounted).toHaveStyleRule('height', '500px');
   });
+*/
 
-  it('uses the imgHeight prop correctly', () => {
-    expect(mounted).toHaveStyleRule('height', '500px');
-    mounted.setProps({ imgHeight: 'calc(100vh - 100px)' });
-    expect(mounted).toHaveStyleRule('height', 'calc(100vh - 100px)');
-  });
-
+  //optional
   it('allows styles to be overriden', () => {
     const TestImg = styled(Img)`
       object-fit: contain;

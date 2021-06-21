@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const Figure = styled.figure`
+  margin: 0;
+  padding: 0.5rem;
+`;
 const Img = styled.img`
   object-fit: cover;
   width: 100%;
@@ -19,12 +23,12 @@ const CarouselSlide = ({
   ...rest
 }) => {
   return (
-    <figure {...rest}>
+    <Figure {...rest}>
       <Img src={imgUrl} imgHeight={imgHeight} />
       <figcaption>
         <strong>{description}</strong> {attribution}
       </figcaption>
-    </figure>
+    </Figure>
   );
 };
 
