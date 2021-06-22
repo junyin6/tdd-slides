@@ -36,6 +36,12 @@ describe('Carousel', () => {
     it('passes slides down to the coreComponent', () => {
       expect(wrapper.find(CoreCarousel).prop('slides')).toBe(slides);
     });
+    it('allows `slideIndex` to be controlled', () => {
+      const mounted = mount(<Carousel slides={slides} slideIndex={1} />);
+      expect(mounted.find(CoreCarousel).prop('slideIndex')).toBe(1);
+      mounted.setProps({ slideIndex: 2 });
+      expect(mounted.find(CoreCarousel).prop('slideIndex')).toBe(2);
+    });
   });
 
   describe('core Component', () => {

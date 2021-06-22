@@ -30,6 +30,7 @@ exports[`Carousel core Component renders correctly 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "Carousel__BackButton-f9wgym-1",
         "isStatic": true,
+        "lastClassName": "eIJERT",
         "rules": Array [
           "position:absolute;margin:0.5rem;padding:1rem;height:600px;left:0;top:0;border:none;background:rgba(0,0,0,0.3);font-size:2rem;color:#f8f9fa;",
         ],
@@ -51,6 +52,7 @@ exports[`Carousel core Component renders correctly 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "Carousel__CarouselWrapper-f9wgym-0",
         "isStatic": true,
+        "lastClassName": "kdQjcS",
         "rules": Array [
           "position:relative;background-color:black;color:#f8f9fa;",
         ],
@@ -71,6 +73,7 @@ exports[`Carousel core Component renders correctly 1`] = `
       "componentStyle": ComponentStyle {
         "componentId": "Carousel__ForwardButton-f9wgym-2",
         "isStatic": true,
+        "lastClassName": "bEPYyq",
         "rules": Array [
           "position:absolute;margin:0.5rem;padding:1rem;height:600px;right:0;top:0;border:none;background:rgba(0,0,0,0.3);font-size:2rem;color:#f8f9fa;",
         ],
@@ -94,6 +97,7 @@ exports[`Carousel core Component renders correctly 1`] = `
         "componentStyle": ComponentStyle {
           "componentId": "CarouselSlide__Img-ds4ujd-1",
           "isStatic": false,
+          "lastClassName": "dqPXnP",
           "rules": Array [
             "object-fit:cover;width:100%;height:",
             [Function],
