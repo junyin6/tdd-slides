@@ -26,6 +26,7 @@ describe('AutoAdvances()', () => {
     jest.useFakeTimers();
     wrapper = shallow(
       <MockComponentWithAutoAdvances
+        index={0}
         autoAdvanceDelay={autoAdvanceDelay}
         upperBound={upperBound}
         indexIncrement={indexIncrement}
@@ -43,7 +44,7 @@ describe('AutoAdvances()', () => {
     expect(indexIncrement).toHaveBeenCalledWith(3);
   });
   it('does not set a timer if `autoAdvanceDelay` is 0', () => {
-    wrapper.setProps({ index: 0, autoAdvanceDelay: 0 });
+    wrapper.setProps({ index: 1, autoAdvanceDelay: 0 });
     jest.advanceTimersByTime(999999);
     expect(indexIncrement).not.toHaveBeenCalled();
   });

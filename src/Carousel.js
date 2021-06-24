@@ -4,6 +4,7 @@ import CarouselSlide from './CarouselSlide';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import HasIndex from './HasIndex';
+import AutoAdvances from './AutoAdvances';
 
 const CarouselWrapper = styled.div`
   position: relative;
@@ -97,4 +98,7 @@ Carousel.defaultProps = {
   defaultBackButton: BackButton,
 };
 
-export default HasIndex(Carousel, 'slideIndex');
+export default HasIndex(
+  AutoAdvances(Carousel, 'slideIndex', 'slides'),
+  'slideIndex'
+);
