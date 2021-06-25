@@ -13,7 +13,7 @@
     "build": "webpack --config webpack.config.js",
     "dev": "webpack-dev-server --config webpack.config.js --open",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "husky": {
     "hooks": {
@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "@storybook/addon-actions": "^6.3.0",
+    "@storybook/addon-essentials": "^6.3.0",
     "@storybook/addon-links": "^6.3.0",
     "@storybook/addons": "^6.3.0",
     "@storybook/react": "^6.3.0",
